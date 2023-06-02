@@ -8,14 +8,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     marginBottom: 10
+  },
+  error: {
+    borderColor: 'red'
   }
 })
 
-const StyleTextInput = ({ style = {}, ...props }) => {
-  const inputStyles = {
-    ...styles.textInput,
-    ...style
-  }
+const StyleTextInput = ({ style = {}, error, ...props }) => {
+  const inputStyles = [styles.textInput, style, error && styles.error]
 
   return <TextInput style={inputStyles} {...props} />
 }

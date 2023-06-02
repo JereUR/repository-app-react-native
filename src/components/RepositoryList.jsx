@@ -1,8 +1,11 @@
-import { View, Text, ScrollView } from 'react-native'
-import repositories from '../data/repositories'
+import { ScrollView } from 'react-native'
+
 import RepositoryItem from './RepositoryItem'
+import useRepositories from '../hooks/useRepositories'
 
 const RepositoryList = () => {
+  const { repositories } = useRepositories()
+
   return (
     <ScrollView style={{ flex: 1 }}>
       {repositories.map((repo) => (
